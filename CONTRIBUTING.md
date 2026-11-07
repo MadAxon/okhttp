@@ -15,24 +15,17 @@ If you have a new feature idea, please build it in an external library. There ar
 something that integrates with OkHttp, tell us so that we can link it!
 
 
-No Generative Tools
--------------------
+AI Agents and Development Tools Policy
+--------------------------------------
 
-We don't use LLMs or generative tools in our source code or documentation. We don't use them for
-human-to-human communication in commits, issues, and pull requests. We believe writing is thinking,
-and want our work to be thoughtful.
+We welcome engineers leveraging modern tooling, including AI coding assistants and autonomous agents (e.g., Claude, GitHub Copilot, Cursor), provided all contributions adhere strictly to the repository's quality bar:
 
-We require all contributors to do likewise. Building is more fun when everyone is making an effort.
+* **Human-in-the-loop review**: Every change must be thoroughly reviewed and understood by an engineer before submission.
+* **Strict automated verification**: Code must pass all tests (`./gradlew check`), style checks (`./gradlew spotlessCheck`), and compatibility validation (`./gradlew animalSnifferMain`).
+* **Test coverage**: Bug fixes and features must include comprehensive unit and regression tests.
+* **Architecture & API stability**: Public APIs must maintain backward binary compatibility, and internal implementation details (`okhttp3.internal.*`) must remain strictly encapsulated.
 
-We’ll immediately reject LLM-generated contributions to protect the culture of our project. We ban
-repeat offenders.
-
-Some narrow exceptions to this policy:
-
-* Non-English speakers may use machine translation tools if they are disclosed.
-* Local autocomplete. (Avoid tools that are metered in tokens.)
-
-Coding is fun.
+For detailed guidelines, environment setup, and agent rules, see [AGENTS.md](AGENTS.md).
 
 
 Code Contributions
@@ -73,9 +66,11 @@ Committer's Guides
 * [Concurrency][concurrency]
 * [Debug Logging][debug_logging]
 * [Releasing][releasing]
+* [Agent & Engineering Guidelines][agents_guide]
 
 [concurrency]: https://lysine.dev/okhttp/concurrency/
 [debug_logging]: https://lysine.dev/okhttp/debug_logging/
 [releasing]: https://lysine.dev/okhttp/releasing/
 [works_with_okhttp]: https://lysine.dev/okhttp/works_with_okhttp/
 [okhttp_build]: https://github.com/lysine-dev/okhttp/blob/master/okhttp/build.gradle.kts
+[agents_guide]: AGENTS.md
